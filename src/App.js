@@ -1,12 +1,12 @@
 import React from 'react';
-import MarvelApi from './Components/Api';
+import GetResponse from './Components/MarvelApiTest';
 
 function App() {
   return (
     <div className="App">
+
       <p>API</p>
-      <MarvelApi />
-      <img src='#' />
+     <GetResponse />
     </div>
   );
 }
