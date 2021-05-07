@@ -7,7 +7,7 @@ var publicKey = '80465148c83b1065bca44bc3e6fd3e83';
 // Makes time stamp and converts that and the keys into a string for each request
 function GetResponse () {
     let baseUrl = 'https://gateway.marvel.com/v1/public/characters';
-    var timeStamp = new Date().getTime;
+    var timeStamp = 1
     var stringtoHash = timeStamp + privateKey + publicKey;
     const hash = MD5(stringtoHash);
 
@@ -15,10 +15,11 @@ function GetResponse () {
 
     console.log(marvelUrl);
     
-    fetch(marvelUrl)
+    fetch(marvelUrl, {mode: 'no-cors'})
         .then(response => {
             console.log(response)
         })
+        
 
     return (
         <div>
