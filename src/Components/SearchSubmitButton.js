@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import getResponse from './MarvelApiTest';
 
-function SubmitButton () {
+function SubmitButton (props) {
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,11 +13,11 @@ function SubmitButton () {
         setName(e.target.value);
     }
 
- 
+  
 
     return (
         <form onSubmit={e => {handleSubmit(e)}}> 
-        <label>Search Here</label>
+        <label>Search Characters Here</label>
         <input
             name='marvelSearch'
             type='text'
