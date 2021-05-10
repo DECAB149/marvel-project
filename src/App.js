@@ -1,11 +1,13 @@
-import React from 'react';
-import GetResponse from './Components/MarvelApiTest';
+import React, { useState, useEffect, } from 'react';
+import SubmitButton from './Components/SearchSubmitButton'
+// import GetResponse from './Components/MarvelApiTest';
 
 
 function App() {
+ 
   return (
     <div className="App">
-     <GetResponse />
+      <SubmitButton />
     </div>
   );
 }

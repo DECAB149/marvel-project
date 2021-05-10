@@ -1,29 +1,36 @@
-import React from 'react';
-
-const form = document.querySelector('form');
-const submitButton = document.querySelector('.submitButton');
-form.addEventListener('submit', handleSubmit);
-submitButton.addEventListener('click', handleSubmit);
-
-function handleSubmit(e) {
-    e.preventDefault();
-    fetchUserQuery();
-}
-
-function fetchUserQuery () {
-    var input = document.querySelector('input[type="text"]');
-    var userQuery = input.value;
-}
-
+import React, { useState, useEffect } from 'react';
+import getResponse from './MarvelApiTest';
 
 function SubmitButton () {
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        getResponse();
+    }
+    const [name, setName] = useState();
+
+    const handleChange = (e) => {
+        setName(e.target.value);
+    }
+
+ 
+
     return (
-        <form> 
-        <label htmlFor='search'>Search Here</label>
-        <input id='search' name='marvelSearch' type='text'></input>
-        <button className='submitButton'>Enter</button>
+        <form onSubmit={e => {handleSubmit(e)}}> 
+        <label>Search Here</label>
+        <input
+            name='marvelSearch'
+            type='text'
+            value={name}
+            onChange={handleChange}>
+            </input>
+        <button
+            className='submitButton'
+            onSubmit={handleSubmit}>
+                Enter
+            </button>
       </form>
     )
 }
 
-export default {SubmitButton, handleSubmit};
+export default SubmitButton;
