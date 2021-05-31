@@ -1,14 +1,11 @@
 import React from 'react';
-
+import SearchResults from './SearchResults';
 
 const DisplayPage = ({showPage, togglePreview, info, img, charName}) => {
 
     return(
         <div style={{ display: showPage ? 'block' : 'none'}}>
-            <button onClick={togglePreview}>Search Again?</button>
-            <img src={img} alt=''></img>
-            <p>hi {charName}</p>
-            <p>hi {info} </p>
+            <SearchResults info={info} img={img} charName={charName} togglePreview={togglePreview} /> 
         </div>
     );
 }

@@ -1,26 +1,26 @@
 import React from 'react';
+import SubmitBtn from './Buttons';
 
 
-export default function Form (props) {
-
+export default function Form ({handleChange, handleSubmit, showPage, }) {
 
 
     return(
-    <div>
-        <form >
-            <label>Search Characters Here</label>
-            <input
-                name='marvelSearch'
-                type='text'
-                onChange={props.handleChange}>
-            </input>
+    
+        <div className='formItems'>
+            <div style={{ display: showPage ? 'none' : 'block' }}>
+                <form >
+                    <label>Search Characters Here</label>
+                    <input
+                        name='marvelSearch'
+                        type='text'
+                        onChange={handleChange}>
+                    </input>
 
-            <button
-            className="submitButton"
-            onClick={props.handleSubmit} >
-                Search
-            </button>
-        </form>
-    </div>
+                   <SubmitBtn  onClick={(e)=>handleSubmit(e)} />
+                </form>
+            </div>
+        </div>
+
     )
 }

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import Header from './Components/Header';
 import Form from './Components/Form';
-import DisplayPage from './Components/CharacterPage';
+import DisplayPage from './Components/DisplayInfo';
 import MD5 from 'crypto-js/md5';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+
 
 function App() {
   const [input, setInput] = useState(null);
   const [showPage, setShowPage] = useState(false);
-  const [charName, setCharName] = useState(false);
-  const [img, setImg] = useState(false);
-  const [info, setInfo] = useState(false);
+  const [charName, setCharName] = useState(null);
+  const [img, setImg] = useState(null);
+  const [info, setInfo] = useState(null);
 
 
   const handleChange = (e) => {
@@ -34,7 +38,7 @@ function marvelApi (input) {
         .then(response => {
             const name = response.data.results[0].name;
             setCharName(name);
-            const img = response.data.results[0].thumbnail.path + '/portrait_small.' + response.data.results[0].thumbnail.extension;
+            const img = response.data.results[0].thumbnail.path + '/standard_amazing.' + response.data.results[0].thumbnail.extension;
             setImg(img);
             const info = response.data.results[0].description;
             setInfo(info);
@@ -55,16 +59,15 @@ function marvelApi (input) {
 
   return (
     <div className="App">
-      <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} togglePreview={togglePreview} />
-      <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
+      <Header />
+      <Container maxWidth='sm'>
+        <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }}>
+          <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
+          <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
+        </Typography>
+      </Container>
     </div>
   );
 }
 
 export default App;
-
-
-// I need to create state, setstate pairs for all relevant api info
-// put into character page
-// make sure it displays then remove or search on screen or transform it to a "search again"
-// make a container to display character data
