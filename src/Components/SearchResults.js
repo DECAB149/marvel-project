@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SubmitBtn from './Buttons';
 
 function SearchResults ({info, img, charName, togglePreview }) {
 
@@ -12,7 +12,9 @@ function SearchResults ({info, img, charName, togglePreview }) {
                 <img src={img} alt=''></img>
                 <p> {charName}</p>
                 <p>{info} </p>
-                <button onClick={togglePreview}>Search Again?</button>
+                <div className='submitbtnWrapper'onClick={togglePreview}>
+                <SubmitBtn />
+                </div>
             </div>
         </div>
     )

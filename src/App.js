@@ -5,7 +5,7 @@ import DisplayPage from './Components/DisplayInfo';
 import MD5 from 'crypto-js/md5';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-
+import Grid from '@material-ui/core/Grid';
 
 function App() {
   const [input, setInput] = useState(null);
@@ -59,13 +59,25 @@ function marvelApi (input) {
 
   return (
     <div className="App">
-      <Header />
-      <Container maxWidth='sm'>
-        <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }}>
-          <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
-          <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
-        </Typography>
-      </Container>
+      <Header />        
+      <Grid container spacing={2}> 
+        <Container maxWidth='md'>
+          <Typography component="div" style={{ backgroundColor: 'purple', height: '50vh' }}>
+          <Grid container spacing={2}> 
+              <Grid item xs={4}>
+              </Grid>
+              <Grid item xs={6}> 
+                <h1 className='searchHeader'>Marvel Api Search</h1>
+              </Grid>
+            </Grid>
+            
+          <Grid container spacing={2}> 
+            <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
+            <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
+          </Grid>
+          </Typography>
+        </Container>
+      </Grid>
     </div>
   );
 }
