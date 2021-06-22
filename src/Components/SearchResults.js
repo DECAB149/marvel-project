@@ -1,23 +1,30 @@
 import React from 'react';
 import SubmitBtn from './Buttons';
 
-function SearchResults ({info, img, charName, togglePreview }) {
+
+import Grid from '@material-ui/core/Grid';
+
+
+
+function SearchResults ({info, img, charName, togglePreview, showPage}) {
 
 
 
 
     return (
         <div >
-            <div className='resultsContainer'>
+            <Grid container spacing={2}>
+                <p> {charName} </p> 
                 <img src={img} alt=''></img>
-                <p> {charName}</p>
                 <p>{info} </p>
                 <div className='submitbtnWrapper'onClick={togglePreview}>
                 <SubmitBtn />
                 </div>
-            </div>
+            </Grid>
         </div>
     )
 }
 
 export default SearchResults;
+
+// then cedit this component so it displays the info in the same container

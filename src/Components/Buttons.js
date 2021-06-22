@@ -28,7 +28,7 @@ export default function SubmitBtn() {
     return(
         <div className={classes.margin}>
             <ThemeProvider theme={customTheme}>
-                <Button color='secondary' variant="contained">Enter</Button>
+                <Button color='secondary' variant="contained">Search Again?</Button>
             </ThemeProvider>
         </div>
     );

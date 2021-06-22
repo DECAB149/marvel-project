@@ -59,25 +59,29 @@ function marvelApi (input) {
 
   return (
     <div className="App">
-      <Header />        
-      <Grid container spacing={2}> 
-        <Container maxWidth='md'>
-          <Typography component="div" style={{ backgroundColor: 'purple', height: '50vh' }}>
-          <Grid container spacing={2}> 
-              <Grid item xs={4}>
-              </Grid>
-              <Grid item xs={6}> 
-                <h1 className='searchHeader'>Marvel Api Search</h1>
-              </Grid>
+      <Header />
+      <Typography component="div" style={{ backgroundColor: 'purple', height: '50vh' }}>        
+      <Grid container spacing={2} > 
+          <Container maxWidth='md' >
+            <Grid container spacing={2} style={{ display: showPage ? 'none' : 'block' }}>
+              <Grid item xs={12}>
+                </Grid>
+              <Grid item xs={12}>
+                </Grid>
+              <Grid item xs={12}>
+                </Grid>
+  
+                <Grid item xs={4}>
+                </Grid>
+                <Grid item xs={6}> 
+                  <h1 className='searchHeader'>Marvel Api Search</h1>
+                </Grid>
+              <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
             </Grid>
-            
-          <Grid container spacing={2}> 
-            <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
             <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
-          </Grid>
-          </Typography>
-        </Container>
+          </Container>
       </Grid>
+      </Typography>
     </div>
   );
 }
