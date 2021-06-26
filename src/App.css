@@ -3,12 +3,6 @@
 
 }
 
-.formItems {
-  text-align: center;
-  display:flex;
-}
-
-#form {
-    flex:1;
-
+.background {
+  background-color: black;
 }
