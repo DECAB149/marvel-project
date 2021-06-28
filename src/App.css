@@ -1,8 +1,11 @@
-.App {
+/* .App {
   text-align: center;
 
-}
+} */
 
-.background {
-  background-color: black;
+
+.pageContents {
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-top: 20px;
 }

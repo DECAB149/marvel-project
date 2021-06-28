@@ -6,6 +6,7 @@ import MD5 from 'crypto-js/md5';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import './App.css';
 
 function App() {
   const [input, setInput] = useState(null);
@@ -60,7 +61,8 @@ function marvelApi (input) {
   return (
     <div className="App">
       <Header />
-      <Typography component="div" style={{ backgroundColor: 'white', height: '50vh' }}>        
+      <div className='pageContents'>
+      <Typography component="div" align="center" style={{ backgroundColor: 'white', height: '100vh',  }}>        
       <Grid container spacing={2} > 
           <Container maxWidth='md' >
             <Grid container spacing={2} style={{ display: showPage ? 'none' : 'block' }}>
@@ -86,6 +88,7 @@ function marvelApi (input) {
           </Container>
       </Grid>
       </Typography>
+      </div>
     </div>
   );
 }
