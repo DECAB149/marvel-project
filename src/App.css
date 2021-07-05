@@ -1,11 +1,23 @@
-/* .App {
+.App {
   text-align: center;
+  font-family: 'MarvelRegular';
+}
 
+/* @font-face {
+  font-family: 'MarvelRegular';
+  src: local('MarvelRegular'), url('./fonts/MarvelRegular-Dj83.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100;
 } */
-
 
 .pageContents {
   padding-left: 130px;
   padding-right: 130px;
-  padding-top: 20px;
+  padding-top: 8px;
 }
+
+/* .marvelHeader{  
+  font-family: 'MarvelRegular';
+} */
+
+

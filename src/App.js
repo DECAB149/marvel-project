@@ -62,7 +62,7 @@ function marvelApi (input) {
     <div className="App">
       <Header />
       <div className='pageContents'>
-      <Typography component="div" align="center" style={{ backgroundColor: 'white', height: '100vh',  }}>        
+      <Typography component="div" align="center" style={{ backgroundColor: '#f5f5f5', height: '100vh',  }}>        
       <Grid container spacing={2} > 
           <Container maxWidth='md' >
             <Grid container spacing={2} style={{ display: showPage ? 'none' : 'block' }}>
@@ -75,11 +75,11 @@ function marvelApi (input) {
               <Grid item xs={12}>
                 </Grid>
 
-              <Grid container spacing={2}>
+              <Grid container spacing={7}>
                   <Grid item xs={4}>
                     </Grid>
-                  <Grid item xs={6}>
-                    <h1 className='searchHeader'>Marvel Api Search</h1>
+                  <Grid item xs={0} >
+                    <h1 className='searchHeader' style={{ alignItems: 'center' }}>Marvel Api Search</h1>
                   </Grid>
               </Grid>
               <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
