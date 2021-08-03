@@ -58,33 +58,33 @@ function Home () {
     }
 
     return (
-        <div className='pageContents'>
-      <Typography component="div" align="center" style={{ backgroundColor: '#f5f5f5', height: '100vh',  }}>        
-      <Grid container spacing={2} > 
-          <Container maxWidth='md' >
-            <Grid container spacing={2} style={{ display: showPage ? 'none' : 'block' }}>
-              <Grid item xs={12}>
-                </Grid>
-              <Grid item xs={12}>
-                </Grid>
-              <Grid item xs={12}>
-                </Grid>
-              <Grid item xs={12}>
-                </Grid>
-
-              <Grid container spacing={7}>
-                  <Grid item xs={4}>
+      <div className='pageContents'>
+        <Typography component="div" align="center" style={{ backgroundColor: '#f5f5f5', height: '100vh',  }}>        
+          <Grid container spacing={2} > 
+              <Container maxWidth='md' >
+                <Grid container spacing={2} style={{ display: showPage ? 'none' : 'block' }}>
+                  <Grid item xs={12}>
                     </Grid>
-                  <Grid item xs={0} >
-                    <h1 className='searchHeader' style={{ alignItems: 'center' }}>Marvel Api Search</h1>
+                  <Grid item xs={12}>
+                    </Grid>
+                  <Grid item xs={12}>
+                    </Grid>
+                  <Grid item xs={12}>
+                    </Grid>
+
+                  <Grid container spacing={7}>
+                      <Grid item xs={4}>
+                        </Grid>
+                      <Grid item xs={0} >
+                        <h1 className='searchHeader' style={{ alignItems: 'center' }}>Marvel Api Search</h1>
+                      </Grid>
                   </Grid>
-              </Grid>
-              <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
-            </Grid>
-            <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
-          </Container>
-      </Grid>
-      </Typography>
+                  <Form handleChange={handleChange} input={input} handleSubmit={handleSubmit} showPage={showPage} />
+                </Grid>
+                <DisplayPage togglePreview={togglePreview} showPage={showPage} img={img} charName={charName} info={info} />
+              </Container>
+          </Grid>
+        </Typography>
       </div>
     )
 }
